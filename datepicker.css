@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f0f2f5;
+}
+
+.datepicker-container {
+    position: relative;
+    width: 300px;
+}
+
+.date-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.date-input:focus {
+    outline: none;
+    border-color: #2196F3;
+}
+
+.datepicker {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: 300px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    padding: 20px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.datepicker.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.nav-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    transition: background 0.2s;
+}
+
+.nav-button:hover {
+    background: #f5f5f5;
+}
+
+.chevron {
+    border-style: solid;
+    border-width: 2px 2px 0 0;
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+}
+
+.prev .chevron {
+    transform: rotate(-135deg);
+}
+
+.next .chevron {
+    transform: rotate(45deg);
+}
+
+.month-year {
+    font-weight: 600;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    text-align: center;
+}
+
+.day-name {
+    color: #666;
+    font-size: 0.9em;
+    padding: 8px 0;
+    font-weight: 500;
+}
+
+.date {
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.95em;
+    border: none;
+    background: none;
+    aspect-ratio: 1;
+}
+
+.date:hover:not(.inactive) {
+    background: #f0f0f0;
+}
+
+.inactive {
+    color: #ccc;
+    cursor: default;
+}
+
+.today {
+    background: #ffe082;
+    color: #333;
+}
+
+.selected {
+    background: #2196F3 !important;
+    color: white !important;
+}

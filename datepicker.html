@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Datepicker</title>
+    <link rel="stylesheet" href="datepicker.css">
+</head>
+
+<body>
+        <div class="datepicker-container">
+            <input type="text" class="date-input" placeholder="Select date" readonly>
+            
+            <div class="datepicker">
+                <div class="header">
+                    <button class="nav-button prev" aria-label="Previous month">
+                        <span class="chevron"></span>
+                    </button>
+
+                    <div class="month-year"></div>
+                    <button class="nav-button next" aria-label="Next month">
+                        <span class="chevron"></span>
+                    </button>
+                </div>
+                
+                <div class="calendar-grid">
+                    <!-- Day names will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+        <script src="datepicker.js"></script>
+    
+</body>
